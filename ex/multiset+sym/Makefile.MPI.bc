@@ -41,15 +41,7 @@
 #  DCC    4.0 (beet)
 #
 
-INCLUDEPATH = ../../include
-
-CXX = mpiCC 
-
-CFLAGS = -DSYSCONF_RDCL -Wno-deprecated
-
-LINKOPT=-lpthread
-
-MU=../../src/mu
+include ../Makefile
 
 # rules for compiling
 all: cache3multi  newcache3  newlist6

@@ -56,7 +56,7 @@
 // changes by Uli
 hash_function::hash_function (int vsize)
 {
-  int i, j, k;
+  long int i, j, k;
   randomGen random;
   uint32_t r;
 
@@ -68,7 +68,7 @@ hash_function::hash_function (int vsize)
   // initialize hashmatrix
   for (i = 0; i < (vec_size * 24); i++) {
     // generate dummy random numbers to get rid of dependencies
-    k = int ((r = random.next ()) % 11 + 13);
+    k = long ((r = random.next ()) % 11 + 13);
     for (j = 0; j < k; j++) {
       random.next ();
     }

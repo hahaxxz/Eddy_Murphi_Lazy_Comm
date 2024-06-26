@@ -41,15 +41,7 @@
 #  DCC    4.0 (beet)
 #
 
-INCLUDEPATH = ../../include
-
-CXX = mpic++
-
-CFLAGS = -DSYSCONF_RDCL -Wno-deprecated -DENABLE_LOGGING -DDEBUG
-
-LINKOPT=-lpthread -ltcmalloc -I/usr/include/google
-
-MU=../../src/mu
+include ../Makefile
 
 # rules for compiling
 all: ns  ns-old  

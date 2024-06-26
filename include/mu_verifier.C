@@ -161,6 +161,7 @@ void* startCommThread(void* syncMutex) {
 			&getQueueSize, &acceptPullRequest, sizeof(class state),
 			&g_initArgc, &g_initArgv);
 	args = new argclass(g_initArgc, g_initArgv);
+	
 
 	CheckMemAvailable(args->bufsize.value, args->bufcount.value,
 			args->mem.value);

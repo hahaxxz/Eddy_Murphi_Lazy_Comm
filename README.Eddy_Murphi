@@ -4,6 +4,24 @@ Eddy_Murphi Release 3.2.3
 Finite-state Concurrent System Verifier for multi-core clusters via 
 message passing and threading.
 
+## Requirements
+
+yacc, flex, flex-old
+openmpi-bin openmpi-common libopenmpi-dev
+google-perftools
+
+install flex-old if undefined reference to `yylex' error occurs.
+
+## Quick Start
+
+```bash
+
+cd src && make
+cd /to/your/directory/of/xxx.m
+make xxx
+mpirun -np 8 ./xxx -m1000 -pr -tv -p5 -sym3 -d ./
+
+```
 
 Responsible for this release: Igor Melatti (melatti@cs.utah.edu)
 

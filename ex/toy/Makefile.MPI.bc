@@ -4,26 +4,7 @@
 # MPI_HOME := ../../mpich
 # CXX = g++
 # CXX = ${MPI_HOME}/bin/mpiCC
-CXX = mpiCC
-
-#LIBS = -lsocket -lnsl -lposix4 -R ${MPI_HOME}/lib
-# LIBS = -L${MPI_HOME}/lib
-
-# INCLUDES = -I${MPI_HOME}/include -I../include
-INCLUDES = -I../../include
-
-# OPT_FLAGS =   -DSOLARIS -O4 -fexpensive-optimizations  -fschedule-insns2
-#DEBUG_FLAGS = -ggdb -DDEBUG
-# BENCH_FLAGS = -O3 -fno-default-inline   # for benchmarks
-
-#CFLAGS =  ${OPT_FLAGS} -DGLUNIX
-#CFLAGS =  ${DEBUG_FLAGS} -DGLUNIX
-#CFLAGS = ${BENCH_FLAGS} 
-CFLAGS = -DSYSCONF_RDCL -Wno-deprecated
-
-LINKOPT=-lpthread
-
-MU=../../src/mu
+include ../Makefile
 
 all: down  lin  pingpong  sets  sort5
 

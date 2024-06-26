@@ -765,7 +765,7 @@ argclass::ProcessOptions (string_iterator * options)
       if (strlen (option) <= strlen (MEM_MEG_PREFIX)) {	/* We cannot have a space before the number */
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -786,7 +786,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (MEM_MEG_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -809,7 +809,7 @@ argclass::ProcessOptions (string_iterator * options)
       if (strlen (option) <= strlen (MEM_K_PREFIX)) {	/* We cannot have a space before the number */
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -830,7 +830,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (MEM_K_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -846,6 +846,7 @@ argclass::ProcessOptions (string_iterator * options)
 	}
 	/* IM<e> */
       }
+      printf("temp: %d\n", temp);
       mem.set (temp * 0x400L);	/* times 1 Kilobyte. */
       continue;
     };
@@ -856,7 +857,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -871,7 +872,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->value () + strlen (BUFSIZE_VALUE), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	{
 	  if (Communicate->IsRoot())
@@ -896,7 +897,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -911,7 +912,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->value () + strlen (BUFCOUNT_VALUE), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	{
 	  if (Communicate->IsRoot())
@@ -936,7 +937,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -951,7 +952,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->value () + strlen (PRINT_FLAG), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	{
 	  if (Communicate->IsRoot())
@@ -1001,7 +1002,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -1020,7 +1021,7 @@ argclass::ProcessOptions (string_iterator * options)
       {
 	sscanf (options->value () + strlen (NUM_BITS_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -1084,7 +1085,7 @@ argclass::ProcessOptions (string_iterator * options)
       /*if (strlen (option) <= strlen (LOOPMAX_PREFIX)) {	/* We cannot have a space before the number *
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -1096,7 +1097,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (LOOPMAX_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	  Error.
 	    Notrace
@@ -1113,7 +1114,7 @@ argclass::ProcessOptions (string_iterator * options)
       if (strlen (option) <= strlen (PERM_LIMIT)) {	/* We cannot have a space before the number */
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -1134,7 +1135,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (PERM_LIMIT), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -1171,7 +1172,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (TEST1_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -1208,7 +1209,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (TEST2_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -1265,7 +1266,7 @@ argclass::ProcessOptions (string_iterator * options)
       if (strlen (option) <= strlen (MAX_NUM_ERRORS_PREFIX)) {
 	sscanf (options->nextvalue (), "%s", temp_str);
 	if (isdigit (temp_str[0])) {
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	  options->next ();
 	}
 	else
@@ -1287,7 +1288,7 @@ argclass::ProcessOptions (string_iterator * options)
 	sscanf (options->value () + strlen (MAX_NUM_ERRORS_PREFIX), "%s",
 		temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -1453,7 +1454,7 @@ argclass::ProcessOptions (string_iterator * options)
       else {
 	sscanf (options->value () + strlen (SYMMETRY_PREFIX), "%s", temp_str);
 	if (isdigit (temp_str[0]))
-	  sscanf (temp_str, "%u", (unsigned long) &temp);
+	  sscanf (temp_str, "%ld", &temp);
 	else
 	/* IM<b> */
 	{
@@ -2054,8 +2055,7 @@ ReportManager::print_summary (bool prob)
   unsigned long temp_ul;
   bool temp_b;
   double temp_d;
-  char num_elts_str[128], rules_fired_str[128];
-
+  char num_elts_str[512], rules_fired_str[512];
 
   if (StateSet->IsNumEltsDouble() || StateSet->IsNumEltsOthersDouble())
     sprintf(num_elts_str, "%lf", StateSet->NumElts_d() + StateSet->NumEltsOthers_d());

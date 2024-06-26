@@ -325,7 +325,7 @@ class state_set
   unsigned long num_collisions;	/* number of collisions in hashing */
   /* IM<b> */
   unsigned long num_elts_others;/* number of elements in the other nodes (if I am root). */
-  double num_elts_others_d;	/* double counterpart (for state spaces with more than 4*10^9 states on 32 bit machines) */
+  double num_elts_others_d ;	/* double counterpart (for state spaces with more than 4*10^9 states on 32 bit machines) */
   bool is_num_elts_others_double;
   double num_elts_d;
   bool is_num_elts_double;

@@ -800,7 +800,9 @@ state_set::state_set (unsigned long table_size)
 #else	// 64 bit version
 #include <math.h>
 state_set::state_set (unsigned long table_size)
-:table_size (table_size), num_elts (0), num_elts_reduced (0), num_collisions (0)
+:table_size (table_size), num_elts (0), num_elts_reduced (0), num_collisions (0)/* IM<b> */
+ , num_elts_others(0), num_elts_others_d(0.0), is_num_elts_others_double(FALSE),
+ num_elts_d(0.0), is_num_elts_double(FALSE)
 {
 #ifndef HASHC
   table = new state[table_size];
@@ -1014,7 +1016,7 @@ int state_set::simple_was_present (state * &in, bool valid, bool permanent, bool
     Full->set (h);
     num_elts++;
     /* IM<b> */
-    /*return FALSE;*/
+    // return FALSE;
     bool is_num_elts_double_prec = is_num_elts_double;
     if (!is_num_elts_double)
       is_num_elts_double = (num_elts == 0);
@@ -1180,7 +1182,7 @@ int state_set::simple_was_present (state * &in, bool valid, bool permanent, bool
   if (permanent)
     num_elts_reduced++;
   /* IM<b> */
-  /*return FALSE;*/
+  // return FALSE;
   if (!is_num_elts_double)
     is_num_elts_double = num_elts == 0;
   num_elts_d = num_elts_d + 1.0;
