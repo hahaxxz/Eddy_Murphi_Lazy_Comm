@@ -114,7 +114,7 @@
 #define INCLUDE_FILE_DATE "Jan 29 1999"
 
 /* Murphi Version Number */
-#define INCLUDE_FILE_VERSION "Murphi Release 3.1"
+#define INCLUDE_FILE_VERSION "Eddy_Murphi Release 3.2.4"
 
 /****************************************
   main headers

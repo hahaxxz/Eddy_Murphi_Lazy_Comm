@@ -1872,6 +1872,7 @@ ReportManager::print_header (void)	// changes by Uli
     << "\n"
     << "Copyright (C) 1992 - 1999 by the Board of Trustees of\n"
     << "Leland Stanford Junior University.\n"
+    << "Copyright (C) 2024 by Xuezheng Xu.\n"
     << "\n====================================="
     << "=====================================\n"
     << "\nProtocol: " << PROTOCOL_NAME << "\n";
