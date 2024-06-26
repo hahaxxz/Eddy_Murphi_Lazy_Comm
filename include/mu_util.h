@@ -375,11 +375,11 @@ public:
   virtual void print ()
   {
     if (defined ())
-      cout << name << ":" << value () << '\n';
+      std::cout << name << ":" << value () << '\n';
     else
-      cout << name << ":Undefined\n";
+      std::cout << name << ":Undefined\n";
   };
-  friend ostream & operator<< (ostream & s, mu__int & val)
+  friend std::ostream & operator<< (std::ostream & s, mu__int & val)
   {
     if (val.defined ())
       s << val.value ();
@@ -676,11 +676,11 @@ public:
   virtual void print ()
   {
     if (defined ())
-      cout << name << ":" << value () << '\n';
+      std::cout << name << ":" << value () << '\n';
     else
-      cout << name << ":Undefined\n";
+      std::cout << name << ":Undefined\n";
   }
-  friend ostream & operator<< (ostream & s, mu__long & val)
+  friend std::ostream & operator<< (std::ostream & s, mu__long & val)
   {
     if (val.defined ())
       s << (int) val;
@@ -747,7 +747,7 @@ class mu_0_boolean:public mu__int
   static char *values[];
 
   // special stream operation --> use names false or true
-  friend ostream & operator<< (ostream & s, mu_0_boolean & x)
+  friend std::ostream & operator<< (std::ostream & s, mu_0_boolean & x)
   {
     if (x.defined ())
       return s << mu_0_boolean::values[int (x)];
@@ -809,9 +809,9 @@ public:
   virtual void print ()
   {
     if (defined ())
-      cout << name << ":" << values[value ()] << '\n';
+      std::cout << name << ":" << values[value ()] << '\n';
     else
-      cout << name << ":Undefined\n";
+      std::cout << name << ":Undefined\n";
   };
   void print_statistic ()
   {

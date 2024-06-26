@@ -43,11 +43,11 @@
 
 INCLUDEPATH = ../../include
 
-CXX = mpiCC 
+CXX = mpiCC -DHASHC_TRACE -DCATCH_DIV #mpiCC 
 
-CFLAGS = -DSYSCONF_RDCL -Wno-deprecated
+CFLAGS = -O3 -Wno-write-strings -DSYSCONF_RDCL -Wno-deprecated -I /usr/include/gperftools/
 
-LINKOPT=-lpthread
+LINKOPT= -lpthread -ltcmalloc -L /usr/lib/x86_64-linux-gnu/
 
 MU=../../src/mu
 
@@ -94,6 +94,12 @@ newcache3: newcache3.C
 
 newcache3.C: newcache3.m
 	${MU} -p -b -c ${MURPHIOPT} newcache3.m
+
+MI_example: MI_example.C
+	${CXX} ${CFLAGS} ${CFLAGSOPT} ${OFLAGS} -o MI_example MI_example.C -I${INCLUDEPATH} ${LINKOPT}
+
+MI_example.C: MI_example.m
+	${MU} -p -b -c ${MURPHIOPT} MI_example.m
 
 clean:
 	rm -f *.C abp  arbiter  cache3  dp4  dpnew  newcache3  *.o

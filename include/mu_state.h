@@ -239,7 +239,7 @@ public:
   void Print (void);
   virtual void print_capacity (void)
   {
-    cout << "\t* Capacity in queue for breadth-first search: "
+    std::cout << "\t* Capacity in queue for breadth-first search: "
       << max_active_states << " states.\n"
       << "\t   * Change the constant gPercentActiveStates in mu_prolog.inc\n"
       << "\t     to increase this, if necessary.\n";
@@ -268,7 +268,7 @@ public:
 
   virtual void print_capacity (void)
   {
-    cout << "\t* Capacity in queue for depth-first search: "
+    std::cout << "\t* Capacity in queue for depth-first search: "
       << max_active_states << " states.\n"
       << "\t   * Change the constant gPercentActiveStates in mu_prolog.inc\n"
       << "\t     to increase this, if necessary.\n";
@@ -400,14 +400,14 @@ public:
   {
     for (unsigned long i = 0; i < table_size; i++)
       if (!is_empty (i)) {
-	cout << "State " << i << "\n";
+	std::cout << "State " << i << "\n";
 #ifdef HASHC
-	cout << "... compressed\n";
+	std::cout << "... compressed\n";
 #else
 	StateCopy (workingstate, &table[i]);
 	theworld.print ();
 #endif
-	cout << "\n";
+	std::cout << "\n";
       }
   }
 };

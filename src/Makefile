@@ -38,7 +38,7 @@ CPLUSPLUS = g++
 #CPLUSPLUS = xlC -+ -Q!
 
 # choice of the options
-CFLAGS = -O4                    # options for g++
+CFLAGS = -O0 -Wno-write-strings -m32 -I /usr/include/gperftools/                  # options for g++
 #CFLAGS = -O4 -pipe -static #
 #CFLAGS = -static #
 #CFLAGS = -w #                              # options for OCC

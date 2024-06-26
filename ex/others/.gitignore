@@ -1,0 +1,5 @@
+*.log
+*.trace.*
+*.trace
+MI_example
+*.C
